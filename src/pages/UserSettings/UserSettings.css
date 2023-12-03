@@ -1,0 +1,46 @@
+/* UserSettings.css */
+
+/* Style for the User Settings container */
+.UserSettings {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Style for the heading */
+  .UserSettings h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for labels and inputs */
+  .UserSettings label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .UserSettings select,
+  .UserSettings input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  /* Style for the Save button */
+  .UserSettings button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .UserSettings button:hover {
+    background-color: #0056b3;
+  }
+  
