@@ -27,16 +27,9 @@ export default function Routees() {
     <Route exact path="/datasubcription" element={<DataSubscriptionPage/>} />
     <Route exact path="/usersettings" element={<UserSettings/>} />
     
-    <Route exact path="/patienthomeupd" element={<PatientHomeupd />} />
+    
     {/* Users routes */}
-    <Route exact path="/users" element={<List />} />
-    <Route exact path="/users2" element={<List2 />} />
-    <Route exact path="/users/:userId" element={<Single />} />
-    <Route exact path="/users/new" element={<New inputs={userInputs} title="Add New User" />} />
-    {/* Products routes */}
-    <Route exact path="/products" element={<List />} />
-    <Route exact path="/products/:productId" element={<Single />} />
-    <Route exact path="/products/new" element={<New inputs={productInputs} title="Add New Product" />} />
+    
   </Routes>
 </BrowserRouter>
     </div>

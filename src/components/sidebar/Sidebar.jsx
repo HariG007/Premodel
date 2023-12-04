@@ -35,7 +35,7 @@ const Sidebar = () => {
         <ul>
           <p className="title">Navigation</p>
 
-          <Link to={'/nursehome'} style={{ textDecoration: "none" }}>
+          <Link to={'/'} style={{ textDecoration: "none" }}>
           <li>
             <DashboardIcon className="icon" />
             <span>Dashboard</span>
@@ -58,12 +58,10 @@ const Sidebar = () => {
 
           <p></p>
 
-          <Link to="/users2" style={{ textDecoration: "none" }}>
           <li>
             <AppRegistrationIcon className="icon" />
             <span>Register</span>
           </li>
-          </Link>
 
           <p></p>
 
