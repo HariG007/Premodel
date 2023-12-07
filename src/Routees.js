@@ -16,6 +16,7 @@ export default function Routees() {
     <Route exact path="/logstatus" element={<LogStatus/>} />
     <Route exact path="/datasubcription" element={<DataSubscriptionPage/>} />
     <Route exact path="/usersettings" element={<UserSettings/>} />
+      <Route exact path="/mapview" element={<MapView/>}/>
   </Routes>
 </BrowserRouter>
     </div>
