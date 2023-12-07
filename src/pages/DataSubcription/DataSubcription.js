@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect  } from 'react';
 import { Link } from 'react-router-dom';
+import allBaseStations from '../DataSubcription/NearbyBasestation/BaseStationLocData.json';
+import { calculateDistance } from './NearbyBasestation/Calculation';
 import { Container,Select,InputLabel, Typography, TextField, MenuItem, Button } from '@mui/material';
 import '../DataSubcription/DataSubcription.css';
 function DataSubscriptionPage() {
@@ -14,6 +16,34 @@ function DataSubscriptionPage() {
     password: '',
     subscriptionName: '',
   });
+
+  const [userLocation, setUserLocation] = useState(null);
+  const [nearbyBaseStations, setNearbyBaseStations] = useState([]);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const location = {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        };
+        setUserLocation(location);
+
+        // Filter nearby base stations
+        const nearbyStations = allBaseStations.filter((baseStation) => {
+          const distance = calculateDistance(location, baseStation.location);
+          return distance <= 10; // Adjust threshold as needed (in kilometers)
+        });
+
+        setNearbyBaseStations(nearbyStations);
+      },
+      (error) => {
+        console.error('Error getting user location:', error);
+        // Handle errors here
+      }
+    );
+  }, []);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,9 +95,11 @@ function DataSubscriptionPage() {
           onChange={handleChange}
           required
         >
-          <MenuItem value="mount-point-1">Mount Point 1</MenuItem>
-          <MenuItem value="mount-point-2">Mount Point 2</MenuItem>
-          {/* Add more mount points here as MenuItem components */}
+                {nearbyBaseStations.map((baseStation) => (
+            <MenuItem key={baseStation.id} value={baseStation.id}>
+              {baseStation.name} - Distance: {calculateDistance(userLocation, baseStation.location).toFixed(2)} km
+            </MenuItem>
+          ))}
         </TextField>
         <p></p>
       <TextField
