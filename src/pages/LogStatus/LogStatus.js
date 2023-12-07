@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
 import '../LogStatus/LogStatus.css'
 export default function LogTable() {
@@ -195,6 +196,12 @@ export default function LogTable() {
     <div className="container">
       <React.Fragment>
         <h1>Logging Table</h1>
+        <div className="breadcrumbs">
+          <Link to="/">Home</Link>
+          <span>&gt;</span>
+          <span>Logging Table</span>
+        </div>
+        
         <DataTable
           columns={column}
           data={filter}
@@ -218,4 +225,5 @@ export default function LogTable() {
       </React.Fragment>
     </div>
   );
+
 }

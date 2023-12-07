@@ -104,7 +104,7 @@ const SalesColumnChart = () => {
   useEffect(() => {
     setOptions((prevState) => ({
       ...prevState,
-      colors: [warning, primaryMain],
+      colors: ['rgb(41, 233, 3)', primaryMain],
       xaxis: {
         labels: {
           style: {

@@ -45,8 +45,7 @@ const Sidebar = () => {
             <span>Register</span>
           </li>
 
-          <p></p>
-
+          <p className="title">Services</p>
           <Link to="/logstatus" style={{ textDecoration: "none" }}>
           <li>
             <StorageIcon  className="icon" />
@@ -74,13 +73,15 @@ const Sidebar = () => {
           
           <p></p>
 
+          <Link to="/mapview"  style={{ textDecoration: "none" }}>
           <li>
             <MyLocationTwoToneIcon className="icon" />
             <span>Map</span>
           </li>
-          
-          <p></p>
+          </Link>
 
+          <p></p>
+          <p className="title">End access</p>
           <Link to="/" style={{ textDecoration: "none" }}>
           <li>
             <ExitToAppIcon className="icon" />

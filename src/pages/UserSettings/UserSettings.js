@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../UserSettings/UserSettings.css'
+import { Link } from 'react-router-dom';
+
 class UserSettings extends Component {
   constructor(props) {
     super(props);
@@ -38,11 +40,19 @@ class UserSettings extends Component {
     const { selectedCorrectionSource, corsSettings } = this.state;
 
     return (
-        <div className="UserSettings"> {/* Apply the UserSettings class to the container */}
-        <h1>User Settings</h1>
+      <>
+     
+      <h1 style={{marginTop:'30px'}}>User Settings</h1>
+        <div style={{marginLeft:'30px'}} className="breadcrumbs">
+          <Link to="/">Home</Link>
+          <span>&gt;</span>
+          <span>User Settings</span>
+        </div>
   
+        <center style={{marginTop:'150px'}}>
+        <div className="UserSettings"> {/* Apply the UserSettings class to the container */}
         <label>
-          Select Correction Source:
+        <p style={{marginRight:'570px'}}> Select Correction Source:</p>
           <select value={selectedCorrectionSource} onChange={this.handleCorrectionSourceChange} className="SelectInput">
             <option value="">Select a source</option>
             <option value="source1">Source 1</option>
@@ -54,7 +64,7 @@ class UserSettings extends Component {
         <br />
   
         <label>
-          CORS Settings:
+          <p style={{marginRight:'640px'}}>CORS Settings:</p>
           <input
             type="text"
             value={corsSettings}
@@ -65,8 +75,10 @@ class UserSettings extends Component {
   
         <br />
   
-        <button className="SaveButton" onClick={this.saveUserSettings}>Save Settings</button>
+        <button style={{marginRight:'600px'}} className="SaveButton" onClick={this.saveUserSettings}>Save Settings</button>
       </div>
+      </center>
+      </>
     );
   }
 }

@@ -10,7 +10,7 @@ const Home = () => {
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
-        <button style={{padding:'3px',marginLeft:'20px', margin:'10px',backgroundColor:' #f9688d',color:'white'}}>Statistic</button>
+        <button style={{padding:'3px',marginLeft:'20px', margin:'10px',backgroundColor:'rgb(41, 233, 3)',color:'white'}}>Statistic</button>
         <DashboardDefault/>
         
       </div>
